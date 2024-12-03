@@ -1,5 +1,21 @@
 @import "reset.scss";
 
+%tplNumber{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 6px;
+	flex-shrink: 0;
+	font-family: Open Sans;
+	font-size: 16px;
+	font-weight: 600;
+	margin-right: 15px;
+	position: relative;
+}
+
 header {
   background-color: #f5f7ff;
   margin: 0 auto;
@@ -150,7 +166,6 @@ margin-right: 30px;
 }
 .service-guide__items{
 	display: flex;
-	justify-content: space-around;
 	margin-top: 66px;
 	margin-bottom: 119px;
 
@@ -169,7 +184,9 @@ margin-right: 30px;
 		margin-top: 19px;
 		margin-bottom: 46px;
 	}
-
+	.service-guide__deskription__block{
+	position: relative;
+	}
 	.service-guide__deskription__blocks{
 	display: flex;
 	align-items: center;
@@ -179,106 +196,79 @@ margin-right: 30px;
 	padding: 22px;
 	margin-top: 22px;
 	}
-	#span-one{
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		text-align: center;
-		width: 30px;
-		height: 30px;
-		border-radius: 6px;
-		background: rgb(243, 224, 255);
-		color: rgb(148, 68, 201);
-		font-family: Open Sans;
-		font-size: 16px;
-		font-weight: 600;
-		margin-right: 15px;
+
+	.service-guide__deskription__sp_one{
+	@extend %tplNumber;
+	background-color: rgb(243, 224, 255);
+	color: rgb(148, 68, 201);
 	}
-	.service-guide__deskription__blocks > h3{
-		color: rgb(50, 50, 50);
-		font-family: Open Sans;
-		font-size: 16px;
-		font-weight: 600;
-		margin-right: 190px;
+	.service-guide__deskription__sp_two{
+	@extend %tplNumber;
+	background-color: rgb(231, 233, 254);
+	color: rgb(98, 111, 255);
+	top:-40px;
 	}
-	#service-guide__deskription__blocks__button{
-		position: relative;
-		left: 2px;
+	.service-guide__deskription__sp_three{
+		@extend %tplNumber;
+		background-color: rgb(255, 222, 204);
+		color: rgb(255, 92, 0);
 	}
 
-	.service-guide__deskription__blo{
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 10px;
-	}
-	#span-two{
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		text-align: center;
-		width: 30px;
-		height: 30px;
-		border-radius: 6px;
-		flex-shrink: 0;
-		background: rgb(231, 233, 254);
-		color: rgb(98, 111, 255);
+	
+	.service-guide__deskription__titl__two{
+		position: relative;
+		top: 119px;
 		font-family: Open Sans;
 		font-size: 16px;
 		font-weight: 600;
-		margin-right: 15px;
-		margin-top: -75px;
+		color: #2c2c54;
+		
+		margin-bottom: 10px;
 	}
-	.service-guide__deskription__blocks__open > h3{
-		color: rgb(50, 50, 50);
+	.service-guide__deskription__blocks > h3{
+		position: absolute;
+		left: 70px;
 		font-family: Open Sans;
 		font-size: 16px;
 		font-weight: 600;
-		margin-right: 190px;
+		color: #2c2c54;
 	}
-	.service-guide__deskription__blocks__open > p{
-		color: rgb(168, 168, 168);
+	.service-guide__deskription__blocks > p{
+		width: 372px;
+		position: relative;
+		top: 25px;
+		left: 5px;
 		font-family: Open Sans;
 		font-size: 12px;
 		font-weight: 400;
 		line-height: 22px;
-		margin-top: 10px;
+		color: #A8A8A8;
+		margin-bottom: 30px;
 	}
-	.service-guide__deskription__blo > a{
-	margin-top: -75px;
+
+	#service-guide__deskription__img{
+		position: relative;
+		top: 0;
+		left: 312px;
 	}
-	#span-three{
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		text-align: center;
-		width: 30px;
-		height: 30px;
-		border-radius: 6px;
-		background: rgb(255, 222, 204);
-		color: rgb(255, 92, 0);
-		font-family: Open Sans;
-		font-size: 16px;
-		font-weight: 600;
-		margin-right: 15px;
+	.service-guide__deskription__blocks > a{
+		position: relative;
+		top: -40px;
+		left: 5px;
 	}
-	#service-guide__deskription__blocks__btn{
-	position: relative;
-	left: 50px;
-	}
+
 	.service-guide__video{
 	position: relative;
 	top: 50px;
 	}
 	.service-guide__video > :first-child{
 	width: 660px;
-	height: 468px;
+	height: 460px;
 	}
 	.service-guide__video > :last-child{
 	position: absolute;
-	top: 50%;
-	left:50%;
-	transform: translate(-50%, -50%); 
+	top: 200px;
+	right: 300px;
 	}
 }
 
