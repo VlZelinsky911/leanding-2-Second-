@@ -179,6 +179,8 @@ header {
 
 .service-guide {
 	@extend %basik;
+	display: flex;
+	align-items: center;
 }
 .service-guide__items {
   display: flex;
@@ -203,87 +205,142 @@ header {
   .service-guide__deskription__block {
     position: relative;
   }
-  .service-guide__deskription__blocks {
-    display: flex;
-    align-items: center;
-    width: 370px;
-    border-radius: 8px;
-    background: rgb(245, 247, 255);
-    padding: 15px;
-    margin-top: 22px;
-  }
+  .service-guide__faq {
+		width: 420px;
+	}
+	
+	.faq__item {
+		border-radius: 8px;
+		background: rgb(245, 247, 255);
+		margin-bottom: 20px;
+	}
+	
+	.faq__title {
+		display: flex; 
+		align-items: center;
+		cursor: pointer;
+		font-size: 18px;
+		color: #2c2c54;
+		padding: 10px 15px;
+		position: relative;
+	}
+	
+	.faq__title::after {
+		content: url('/img/arrow.png');
+		display: block;
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+	}
+	
+	.faq__input:checked ~ .faq__title::after {
+		content: url('/img/revers-arrow.png');
+		transition: transform 0.5s ease-out;
+	}
+	
+	
+	#one{
+		color: rgb(148, 68, 201);
+		background-color: rgb(243, 224, 255);
+	}
+	#three{
+	color: rgb(255, 92, 0);	
+	background-color: rgb(255, 222, 204);
+	}
+	.faq__title > span {
+		display: inline-flex; /* Гарантує, що розмір буде збережений */
+		justify-content: center;
+		align-items: center;
+		width: 30px;
+		height: 30px;
+		border-radius: 6px;
+		background: rgb(231, 233, 254);
+		color: rgb(98, 111, 255);
+		font-family: Open Sans;
+		font-size: 16px;
+		font-weight: 600;
+		margin-right: 15px;
+	}
+	
+	.faq__input {
+		appearance: none;
+		position: absolute;
+	}
+	
+	.faq__text {
+		max-height: 0; /* Початково приховуємо */
+		overflow: hidden; /* Приховуємо зайвий текст */
+		padding: 0 15px;
+		font-size: 14px;
+		line-height: 20px;
+		color: #909bb5; /* Сірий текст */
+		transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Анімація */
+	}
+	
+	.faq__input:checked ~ .faq__text {
+		max-height: 200px; /* Достатньо для тексту */
+		padding: 10px 15px; /* Відновлюємо padding */
+	}
 
-  .service-guide__deskription__sp_one {
-    @extend %tplNumber;
-    background-color: rgb(243, 224, 255);
-    color: rgb(148, 68, 201);
-  }
-  .service-guide__deskription__sp_two {
-    @extend %tplNumber;
-    background-color: rgb(231, 233, 254);
-    color: rgb(98, 111, 255);
-    top: -40px;
-  }
-  .service-guide__deskription__sp_three {
-    @extend %tplNumber;
-    background-color: rgb(255, 222, 204);
-    color: rgb(255, 92, 0);
-  }
-
-  .service-guide__deskription__titl__two {
-    position: relative;
-    top: 108px;
-    font-family: Open Sans;
-    font-size: 16px;
-    font-weight: 600;
-    color: #2c2c54;
-    margin-bottom: 10px;
-  }
-  .service-guide__deskription__blocks > h3 {
-    position: absolute;
-    left: 70px;
-    font-family: Open Sans;
-    font-size: 16px;
-    font-weight: 600;
-    color: #2c2c54;
-  }
-  .service-guide__deskription__blocks > p {
-    width: 295px;
+	.service-guide__video {
     position: relative;
     top: 40px;
-    left: 10px;
-    font-family: Open Sans;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 22px;
-    color: #a8a8a8;
-    margin-bottom: 30px;
-  }
 
-  #service-guide__deskription__img {
-    position: relative;
-    top: 0;
-    left: 305px;
+		& > img:first-child{
+			position: relative;
+			width: 660px;
+			height: 450px;
+		}
+		a{
+			position: absolute;
+			top: 185px;
+			right: 290px;
+		}
   }
-  .service-guide__deskription__blocks > a {
-    position: relative;
-    top: -40px;
-    left: 10px;
-  }
+	
+	
+  // .service-guide__deskription__titl__two {
+  //   position: relative;
+  //   top: 108px;
+  //   font-family: Open Sans;
+  //   font-size: 16px;
+  //   font-weight: 600;
+  //   color: #2c2c54;
+  //   margin-bottom: 10px;
+  // }
+  // .service-guide__deskription__blocks > h3 {
+  //   position: absolute;
+  //   left: 70px;
+  //   font-family: Open Sans;
+  //   font-size: 16px;
+  //   font-weight: 600;
+  //   color: #2c2c54;
+  // }
+  // .service-guide__deskription__blocks > p {
+  //   width: 295px;
+  //   position: relative;
+  //   top: 40px;
+  //   left: 10px;
+  //   font-family: Open Sans;
+  //   font-size: 12px;
+  //   font-weight: 400;
+  //   line-height: 22px;
+  //   color: #a8a8a8;
+  //   margin-bottom: 30px;
+  // }
 
-  .service-guide__video {
-    position: relative;
-    top: 40px;
-  }
-  .service-guide__video > :first-child {
-    width: 660px;
-    height: 450px;
-  }
-  .service-guide__video > :last-child {
-    position: absolute;
-    top: 185px;
-    right: 290px;
-  }
+  // #service-guide__deskription__img {
+  //   position: relative;
+  //   top: 0;
+  //   left: 305px;
+  // }
+  // .service-guide__deskription__blocks > a {
+  //   position: relative;
+  //   top: -40px;
+  //   left: 10px;
+  // }
+
 }
 .about-us {
 	@extend %basik;
