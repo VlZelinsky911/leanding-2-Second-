@@ -73,19 +73,17 @@ table {
 }
 
 .footer__items, .prices, .statictic, .reviews, .vacancies, .about-us, .service-guide, .introduction__item {
-  width: 1100px;
+  max-width: 1100px;
   height: auto;
   margin: 0 auto;
 }
 
 header {
   background-color: #f5f7ff;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
 }
 header .header__item {
-  width: 1110px;
+  margin: 0 auto;
+  max-width: 1100px;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -148,11 +146,13 @@ header .header__links a:hover {
 }
 
 .introduction {
+  display: flex;
   background-color: #f5f7ff;
 }
 
 .introduction__item {
-  height: 524px;
+  height: 568px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
 }
@@ -165,8 +165,6 @@ header .header__links a:hover {
   font-size: 45px;
   font-weight: 400;
   line-height: 55px;
-  letter-spacing: 7%;
-  text-align: left;
 }
 .introduction__item .introduction__description__title span {
   color: rgb(255, 92, 0);
@@ -206,7 +204,7 @@ header .header__links a:hover {
 }
 
 .banners {
-  max-width: 1110px;
+  width: 1110px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -623,7 +621,7 @@ header .header__links a:hover {
 .statictic__items {
   display: flex;
   justify-content: space-between;
-  background-color: #CED5F4;
+  background-color: #ced5f4;
   border-radius: 30px;
   padding: 74px 114px;
 }
@@ -634,7 +632,7 @@ header .header__links a:hover {
   font-size: 40px;
   font-weight: 400;
   line-height: 50px;
-  color: #584EC6;
+  color: #584ec6;
 }
 .statictic__elements p {
   text-align: center;
@@ -642,7 +640,7 @@ header .header__links a:hover {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 14px;
 }
 
@@ -722,7 +720,7 @@ header .header__links a:hover {
 }
 
 .prices__card__deskription {
-  width: 219PX;
+  width: 219px;
   display: flex;
   gap: 11px;
   margin-bottom: 19px;
@@ -832,4 +830,231 @@ header .header__links a:hover {
 }
 .footer__menu__media a:nth-of-type(1) {
   line-height: 32px;
+}
+
+@media (max-width: 1153px) {
+  .header__img {
+    display: none;
+  }
+  .introduction__description__paragraph {
+    width: 520px;
+  }
+  .introduction__img img {
+    width: 300px;
+  }
+  .banners {
+    width: 792px;
+    justify-content: space-around;
+  }
+  .banners img:nth-of-type(6) {
+    display: none;
+  }
+  .service-guide {
+    justify-content: space-around;
+  }
+  .service-guide .service-guide__items {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .service-guide .service-guide__items .service-guide__deskription {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-us__items .about-us__items__elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-us__items #about-us__items__unique {
+    position: relative;
+    top: 0;
+  }
+  #vacancies__element__unique {
+    display: none;
+  }
+  .vacancies__item .vacancies__item__btn {
+    position: relative;
+    left: 0px;
+  }
+  .prices__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .prices__cards a {
+    margin-bottom: 20px;
+  }
+  .prices__cards #prices__card__unique {
+    position: relative;
+    top: 0px;
+  }
+  .prices__card {
+    width: 300px;
+    justify-content: space-around;
+  }
+  .footer__info {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer__line {
+    width: 99%;
+  }
+}
+@media (max-width: 860px) {
+  .header__links {
+    display: none;
+  }
+  .introduction__img {
+    display: none;
+  }
+  .introduction__description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .banners {
+    width: 600px;
+  }
+  .banners img:nth-of-type(5) {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .header__item {
+    padding-top: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__item .header__input {
+    display: none;
+  }
+  .service-guide__items .service-guide__video > img:first-child {
+    position: relative;
+    width: 500px;
+    height: 300px;
+  }
+  .service-guide__items .service-guide__video a {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 110px;
+    left: 200px;
+  }
+}
+@media (max-width: 590px) {
+  .introduction__item .introduction__description__title {
+    width: 460px;
+  }
+  .introduction__item .introduction__description__paragraph {
+    width: 420px;
+  }
+  .banners {
+    width: 460px;
+  }
+  .banners img:nth-of-type(1) {
+    display: none;
+  }
+  .service-guide__video {
+    display: none;
+  }
+  .service-guide__title {
+    text-align: center;
+  }
+  .about-us__items .about-us__items__deskription {
+    width: 400px;
+  }
+  .vacancies__item .vacancies__item__paragraph {
+    width: 400px;
+  }
+  .vacancies__elements {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .reviews__item .review__item__paragraph {
+    width: 400px;
+  }
+  .reviews__item .reviews__elements {
+    flex-direction: column;
+  }
+  .reviews__item .reviews__elements .reviews__elements__text {
+    text-align: center;
+  }
+  .reviews__item .reviews__elements .reviews__elements__text .reviews__elements__stars {
+    justify-content: center;
+    padding: 10px 0;
+  }
+  .statictic {
+    display: none;
+  }
+  .prices__item__paragraph {
+    width: 400px;
+  }
+  .footer__items {
+    padding-top: 25px;
+  }
+  .footer__info {
+    display: none;
+  }
+  .footer__menu__info {
+    display: none;
+  }
+  .footer__line {
+    display: none;
+  }
+}
+@media (max-width: 470px) {
+  .header .header__menu {
+    width: 370px;
+  }
+  .introduction__item .introduction__description__title {
+    width: 380px;
+  }
+  .introduction__item .introduction__description__paragraph {
+    width: 318px;
+  }
+  .banners {
+    width: 380px;
+  }
+  .banners img:nth-of-type(2) {
+    display: none;
+  }
+  .service-guide__items .service-guide__title {
+    width: 350px;
+  }
+  .service-guide__items .service-guide__faq {
+    width: 360px;
+  }
+  .about-us__items .about-us__items__deskription {
+    width: 360px;
+  }
+  .about-us__items .about-us__items__element h3 {
+    width: 120px;
+  }
+  .vacancies__item .vacancies__item__paragraph {
+    width: 360px;
+  }
+  .reviews__item .review__item__paragraph {
+    width: 360px;
+  }
+  .reviews__item .reviews__elements {
+    width: 360px;
+  }
+  .prices__item .prices__item__paragraph {
+    width: 360px;
+  }
+}
+@media (max-width: 380px) {
+  .introduction__item .introduction__description__title {
+    width: 360px;
+  }
+  .banners {
+    width: 350px;
+  }
+  .vacancies__item .vacancies__element {
+    width: 350px;
+  }
 }
