@@ -54,6 +54,7 @@ table {
   border-spacing: 0;
 }
 
+
 .prices__item__paragraph, .review__item__paragraph, .vacancies__item .vacancies__item__paragraph, .about-us__items .about-us__items__deskription {
   width: 543px;
   font-family: Open Sans;
@@ -151,7 +152,7 @@ header .header__links a:hover {
 }
 
 .introduction__item {
-  height: 568px;
+  height: 524px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -258,7 +259,7 @@ header .header__links a:hover {
   position: relative;
 }
 .service-guide__items .faq__title::after {
-  content: url("/img/arrow.png");
+  content: url("/images/arrow.png");
   display: block;
   position: absolute;
   top: 50%;
@@ -266,7 +267,7 @@ header .header__links a:hover {
   transform: translateY(-50%);
 }
 .service-guide__items .faq__input:checked ~ .faq__title::after {
-  content: url("/img/revers-arrow.png");
+  content: url("/images/revers-arrow.png");
   transition: transform 0.5s ease-out;
 }
 .service-guide__items #one {
@@ -407,11 +408,11 @@ header .header__links a:hover {
   transition: background-color 0.3s ease;
 }
 .vacancies__item .vacancies__arrows > a:first-child:hover {
-  content: url("/img/arrow-hover-left.png");
+  content: url("/images/arrow-hover-left.png");
   background-color: rgb(239, 96, 16);
 }
 .vacancies__item .vacancies__arrows > a:last-child:hover {
-  content: url("/img/arrow-hover.png");
+  content: url("/images/arrow-hover.png");
   background-color: rgb(239, 96, 16);
 }
 .vacancies__item #vacancies__element__unique {
@@ -608,12 +609,12 @@ header .header__links a:hover {
   background-color: rgb(239, 96, 16);
 }
 .reviews__elements__navig .reviews__elements__arrows > a:hover img {
-  content: url("/img/arrow-hover-left.png");
+  content: url("/images/arrow-hover-left.png");
   width: 25px;
   height: 25px;
 }
 .reviews__elements__navig .reviews__elements__arrows > a:hover #reviews__arrows__unique {
-  content: url("/img/arrow-hover.png");
+  content: url("/images/arrow-hover.png");
   width: 25px;
   height: 25px;
 }

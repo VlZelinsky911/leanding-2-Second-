@@ -1,119 +1,18 @@
 @import "reset.scss";
+@import "utilities/variables";
+@import "utilities/placeholders";
+@import "components/header";
+@import "components/footer";
+@import "components/adaptive.scss";
 
-%tplNumber {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  flex-shrink: 0;
-  font-family: Open Sans;
-  font-size: 16px;
-  font-weight: 600;
-  margin-right: 15px;
-  position: relative;
-}
-%tplParagraph {
-  width: 543px;
-  font-family: Open Sans;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-  color: #a8a8a8;
-  text-align: center;
-}
-%tplTitle {
-  font-family: Oswald;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 50px;
-  color: #353434;
-}
-%basik {
-  max-width: 1100px;
-  height: auto;
-  margin: 0 auto;
-}
-
-header {
-  background-color: #f5f7ff;
-
-  .header__item {
-    margin: 0 auto;
-    max-width: 1100px;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header__img {
-    width: 104px;
-    height: auto;
-  }
-  .header__menu {
-    width: 433px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header__menu__items {
-    color: rgb(39, 35, 35);
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    text-decoration: none;
-  }
-  .header__input {
-    display: flex;
-    align-items: center;
-    width: 307px;
-    height: 35px;
-    border-radius: 50px;
-    background: rgb(255, 255, 255);
-    padding: 0 10px;
-    box-sizing: border-box;
-    border: none;
-  }
-  .header__input__input-element {
-    border: none;
-    outline: none;
-    background: none;
-    color: rgb(165, 165, 165);
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 62px;
-  }
-  .header__input__btn {
-    position: relative;
-    top: 9px;
-    left: 95px;
-  }
-  .header__links {
-    a {
-      font-family: Open Sans;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 62px;
-      text-decoration: none;
-      color: rgb(39, 35, 35);
-      &:hover {
-        color: rgb(66, 56, 175);
-      }
-    }
-  }
-}
 
 .introduction {
   display: flex;
-  background-color: #f5f7ff;
+  background-color: $color-background;
 }
 .introduction__item {
   @extend %basik;
-  height: 568px;
+  height: 524px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -132,11 +31,7 @@ header {
     }
   }
   .introduction__description__paragraph {
-    color: rgb(168, 168, 168);
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
+    @extend %tplParagraph;
     margin-top: 18px;
     margin-bottom: 30px;
   }
@@ -167,8 +62,7 @@ header {
   }
 }
 .banners {
-  width: 1110px;
-  margin: 0 auto;
+	@extend %basik;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -192,11 +86,7 @@ header {
     font-weight: 400;
   }
   .service-guide__title {
-    color: rgb(53, 52, 52);
-    font-family: Oswald;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 50px;
+		@extend %tplTitle;
     margin-top: 19px;
     margin-bottom: 46px;
   }
@@ -224,7 +114,7 @@ header {
   }
 
   .faq__title::after {
-    content: url("/img/arrow.png");
+    content: url("/images/arrow.png");
     display: block;
     position: absolute;
     top: 50%;
@@ -233,7 +123,7 @@ header {
   }
 
   .faq__input:checked ~ .faq__title::after {
-    content: url("/img/revers-arrow.png");
+    content: url("/images/revers-arrow.png");
     transition: transform 0.5s ease-out;
   }
 
@@ -246,7 +136,7 @@ header {
     background-color: rgb(255, 222, 204);
   }
   .faq__title > span {
-    display: inline-flex; /* Гарантує, що розмір буде збережений */
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 30px;
@@ -266,19 +156,19 @@ header {
   }
 
   .faq__text {
-    max-height: 0; /* Початково приховуємо */
-    overflow: hidden; /* Приховуємо зайвий текст */
+    max-height: 0; 
+    overflow: hidden;
     padding: 0 15px;
     font-size: 14px;
     line-height: 20px;
-    color: #909bb5; /* Сірий текст */
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Анімація */
+    color: #909bb5; 
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; 
   }
 
   .faq__input:checked ~ .faq__text {
-    max-height: 200px; /* Достатньо для тексту */
-    padding: 10px 15px; /* Відновлюємо padding */
-  }
+    max-height: 200px;
+    padding: 10px 15px;
+	 }
 
   .service-guide__video {
     position: relative;
@@ -295,55 +185,11 @@ header {
       right: 290px;
     }
   }
-
-  // .service-guide__deskription__titl__two {
-  //   position: relative;
-  //   top: 108px;
-  //   font-family: Open Sans;
-  //   font-size: 16px;
-  //   font-weight: 600;
-  //   color: #2c2c54;
-  //   margin-bottom: 10px;
-  // }
-  // .service-guide__deskription__blocks > h3 {
-  //   position: absolute;
-  //   left: 70px;
-  //   font-family: Open Sans;
-  //   font-size: 16px;
-  //   font-weight: 600;
-  //   color: #2c2c54;
-  // }
-  // .service-guide__deskription__blocks > p {
-  //   width: 295px;
-  //   position: relative;
-  //   top: 40px;
-  //   left: 10px;
-  //   font-family: Open Sans;
-  //   font-size: 12px;
-  //   font-weight: 400;
-  //   line-height: 22px;
-  //   color: #a8a8a8;
-  //   margin-bottom: 30px;
-  // }
-
-  // #service-guide__deskription__img {
-  //   position: relative;
-  //   top: 0;
-  //   left: 305px;
-  // }
-  // .service-guide__deskription__blocks > a {
-  //   position: relative;
-  //   top: -40px;
-  //   left: 10px;
-  // }
-}
 .about-us {
   @extend %basik;
 }
 .about-us__items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	@extend %flex-center;
   padding-bottom: 119px;
   h2 {
     @extend %tplTitle;
@@ -394,11 +240,7 @@ header {
     top: 50px;
     left: 37px;
     width: 278px;
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    color: rgb(143, 143, 143);
+		@extend %tplParagraph;
   }
 }
 
@@ -406,9 +248,7 @@ header {
   @extend %basik;
 }
 .vacancies__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @extend %flex-center;
   padding-bottom: 119px;
 
   h2 {
@@ -437,11 +277,11 @@ header {
     transition: background-color 0.3s ease;
   }
   .vacancies__arrows > a:first-child:hover {
-    content: url("/img/arrow-hover-left.png");
+    content: url("/images/arrow-hover-left.png");
     background-color: rgb(239, 96, 16);
   }
   .vacancies__arrows > a:last-child:hover {
-    content: url("/img/arrow-hover.png");
+    content: url("/images/arrow-hover.png");
     background-color: rgb(239, 96, 16);
   }
 
@@ -451,9 +291,7 @@ header {
   }
 
   .vacancies__element {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @extend %flex-center;
     width: 380px;
     height: 465px;
     background-color: #f9faff;
@@ -483,11 +321,8 @@ header {
   .vacancies__element > p {
     position: relative;
     top: 46px;
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
     color: #4238af;
+		@extend %tplParagraph;
   }
 
   #vacancies__elements__unique {
@@ -495,13 +330,12 @@ header {
   }
   .vacancies__elements__salary {
     display: flex;
-
     position: relative;
     top: 82px;
     margin-bottom: 14px;
 
     span {
-      color: rgb(137, 137, 137);
+      color: $color-secondary;
     }
   }
   .vacancies__elements__salary > img {
@@ -559,9 +393,7 @@ header {
 }
 
 .reviews__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	@extend %flex-centr;
   padding-top: 160px;
   padding-bottom: 160px;
 
@@ -588,20 +420,12 @@ header {
     color: #323232;
   }
   h4 {
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #868686;
+		@extend %tplParagraphl;
     margin-top: 13px;
     margin-bottom: 39px;
   }
   p {
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #383838;
+		@extend %tplParagraph;
   }
 }
 .reviews__elements__img {
@@ -635,9 +459,7 @@ header {
   }
 
   .reviews__elements__arrows > a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %flex-centr;
     width: 41px;
     height: 41px;
     background-color: rgb(249, 250, 255);
@@ -653,12 +475,12 @@ header {
       background-color: rgb(239, 96, 16);
 
       img {
-        content: url("/img/arrow-hover-left.png");
+        content: url("/images/arrow-hover-left.png");
         width: 25px;
         height: 25px;
       }
       #reviews__arrows__unique {
-        content: url("/img/arrow-hover.png");
+        content: url("/images/arrow-hover.png");
         width: 25px;
         height: 25px;
       }
@@ -679,10 +501,7 @@ header {
 .statictic__elements {
   h2 {
     text-align: center;
-    font-family: Oswald;
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 50px;
+    @extend %tplTitle;
     color: #584ec6;
   }
   p {
@@ -786,372 +605,5 @@ header {
 .prices__card__deskription > p {
   width: 219px;
   justify-content: flex-start;
-}
-
-.footer {
-  border-radius: 30px 30px 0px 0px;
-  background: rgb(219, 226, 255);
-}
-.footer__items {
-  @extend %basik;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 160px;
-}
-.footer__info {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    h2 {
-      color: rgb(53, 52, 52);
-      font-family: Oswald;
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 26px;
-      margin-bottom: 8px;
-    }
-    a {
-      color: rgb(113, 113, 113);
-      font-family: Open Sans;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 26px;
-      text-decoration: none;
-    }
-  }
-}
-.footer__line {
-  width: 100%;
-  border: 2px solid rgb(98, 91, 174);
-  margin-top: 97px;
-  margin-bottom: 20px;
-}
-.footer__menu {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.footer__logo {
-  width: 62px;
-  height: 25px;
-}
-
-.footer__menu__info {
-  width: 601px;
-  display: flex;
-  justify-content: space-around;
-  & a:first-child {
-    color: rgb(58, 46, 92);
-    font-family: Open Sans;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 26px;
-    text-decoration: none;
-  }
-  a {
-    color: rgb(58, 46, 92);
-    font-family: Open Sans;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 26px;
-    text-decoration: none;
-  }
-}
-
-.footer__menu__media {
-  display: flex;
-  gap: 8px;
-
-  a {
-    text-align: center;
-    width: 29px;
-    height: 29px;
-    line-height: 30px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 70px;
-
-    &:nth-of-type(3) {
-      background: rgba(66, 56, 175, 0.81);
-      line-height: 32px;
-    }
-    &:nth-of-type(1) {
-      line-height: 32px;
-    }
-  }
-}
-
-@media (max-width: 1153px) {
-  .header__img {
-    display: none;
-  }
-  .introduction__description__paragraph {
-    width: 520px;
-  }
-  .introduction__img {
-    img {
-      width: 300px;
-    }
-  }
-  .banners {
-    width: 792px;
-    justify-content: space-around;
-    img:nth-of-type(6) {
-      display: none;
-    }
-  }
-  .service-guide {
-    justify-content: space-around;
-
-    .service-guide__items {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-
-      .service-guide__deskription {
-        margin-top: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  }
-  .about-us__items {
-    .about-us__items__elements {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    #about-us__items__unique {
-      position: relative;
-      top: 0;
-    }
-  }
-  #vacancies__element__unique {
-    display: none;
-  }
-  .vacancies__item {
-    .vacancies__item__btn {
-      position: relative;
-      left: 0px;
-    }
-  }
-  .prices__cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-
-    a {
-      margin-bottom: 20px;
-    }
-    #prices__card__unique {
-      position: relative;
-      top: 0px;
-    }
-  }
-  .prices__card {
-    width: 300px;
-    justify-content: space-around;
-  }
-  .footer__info {
-    display: flex;
-    justify-content: space-around;
-  }
-  .footer__line {
-    width: 99%;
-  }
-}
-
-@media (max-width: 860px) {
-  .header__links {
-    display: none;
-  }
-  .introduction__img {
-    display: none;
-  }
-  .introduction__description {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .banners {
-    width: 600px;
-    img:nth-of-type(5) {
-      display: none;
-    }
-  }
-}
-@media (max-width: 760px) {
-  .header__item {
-    padding-top: 30px;
-    flex-direction: column;
-    align-items: center;
-
-    .header__input {
-      display: none;
-    }
-  }
-  .service-guide__items .service-guide__video > img:first-child {
-    position: relative;
-    width: 500px;
-    height: 300px;
-  }
-
-  .service-guide__items .service-guide__video a {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 110px;
-    left: 200px;
-  }
-}
-@media (max-width: 590px) {
-  .introduction__item {
-    .introduction__description__title {
-      width: 460px;
-    }
-    .introduction__description__paragraph {
-      width: 420px;
-    }
-  }
-  .banners {
-    width: 460px;
-    img:nth-of-type(1) {
-      display: none;
-    }
-  }
-  .service-guide__video {
-    display: none;
-  }
-  .service-guide__title {
-    text-align: center;
-  }
-  .about-us__items {
-    .about-us__items__deskription {
-      width: 400px;
-    }
-  }
-  .vacancies__item {
-    .vacancies__item__paragraph {
-      width: 400px;
-    }
-  }
-  .vacancies__elements {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-  .reviews__item {
-    .review__item__paragraph {
-      width: 400px;
-    }
-    .reviews__elements {
-      flex-direction: column;
-      .reviews__elements__text {
-        text-align: center;
-        .reviews__elements__stars {
-          justify-content: center;
-          padding: 10px 0;
-        }
-      }
-    }
-  }
-  .statictic {
-    display: none;
-  }
-  .prices__item__paragraph {
-    width: 400px;
-  }
-  .footer__items {
-    padding-top: 25px;
-  }
-  .footer__info {
-    display: none;
-  }
-  .footer__menu__info {
-    display: none;
-  }
-  .footer__line {
-    display: none;
-  }
-}
-@media (max-width: 470px) {
-  .header {
-    .header__menu {
-      width: 370px;
-    }
-  }
-  .introduction__item {
-    .introduction__description__title {
-      width: 380px;
-    }
-    .introduction__description__paragraph {
-      width: 318px;
-    }
-  }
-  .banners {
-    width: 380px;
-    img:nth-of-type(2) {
-      display: none;
-    }
-  }
-  .service-guide__items {
-    .service-guide__title {
-      width: 350px;
-    }
-    .service-guide__faq {
-      width: 360px;
-    }
-  }
-  .about-us__items {
-    .about-us__items__deskription {
-      width: 360px;
-    }
-    .about-us__items__element {
-      h3 {
-        width: 120px;
-      }
-    }
-  }
-  .vacancies__item {
-    .vacancies__item__paragraph {
-      width: 360px;
-    }
-  }
-  .reviews__item {
-    .review__item__paragraph {
-      width: 360px;
-    }
-    .reviews__elements {
-      width: 360px;
-    }
-  }
-  .prices__item {
-    .prices__item__paragraph {
-      width: 360px;
-    }
-  }
-}
-@media(max-width:380px){
-.introduction__item{
-.introduction__description__title{
-width: 360px;
-}
-}	
-.banners{
-width: 350px;
-}
-.vacancies__item{
-.vacancies__element{
-width: 350px;
-}
-}
+	}
 }
